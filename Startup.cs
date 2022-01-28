@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TodoistCloneAPI.Repositories;
 using TodoistCloneAPI.Repositories.Shared;
 using TodoistCloneAPI.Shared.Interfaces.Repositories;
 
@@ -36,6 +37,10 @@ namespace TodoistCloneAPI
             });
 
             services.AddScoped<IDataBase, SQLServer>();
+
+            services.AddScoped<IEtiquetaRepository, EtiquetaRepository>();
+            services.AddScoped<IProjetoRepository, ProjetoRepository>();
+        
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
