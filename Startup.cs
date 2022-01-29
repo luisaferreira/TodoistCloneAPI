@@ -40,7 +40,7 @@ namespace TodoistCloneAPI
 
             services.AddScoped<IEtiquetaRepository, EtiquetaRepository>();
             services.AddScoped<IProjetoRepository, ProjetoRepository>();
-
+            services.AddScoped<ITarefaRepository, TarefaRepository>();
             services.AddScoped<ITarefaEtiquetaRepository, TarefaEtiquetaRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
         }

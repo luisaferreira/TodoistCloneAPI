@@ -7,7 +7,8 @@ namespace TodoistCloneAPI.Shared.Interfaces.Repositories
     {
         int AdicionarTarefa(Tarefa tarefa);
         int AtualizarTarefa(int idTarefa, Tarefa tarefa);
+        int ExcluirTarefa(int idTarefa);
         Tarefa ObterTarefaPorId(int idTarefa);
-        IEnumerable<Tarefa> ObterTarefas();
+        IEnumerable<Tarefa> ObterTarefasPorIdProjeto(int idProjeto);
     }
 }
