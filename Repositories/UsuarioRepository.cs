@@ -48,6 +48,22 @@ namespace TodoistCloneAPI.Repositories
             }
         }
 
+        public int ExcluirUsuario(int idUsuario)
+        {
+            try
+            {
+                var sql = new StringBuilder();
+                sql.AppendLine("DELETE FROM Usuario");
+                sql.AppendLine($"WHERE Id = '{idUsuario}'");
+
+                return _DataBase.ExecutaQuery(sql.ToString());
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Erro ao excluir usuário: {e.Message}");
+            }
+        }
+
         public Usuario ObterUsuarioPorId(int idUsuario)
         {
             try

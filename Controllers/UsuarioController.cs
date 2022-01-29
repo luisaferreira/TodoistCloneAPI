@@ -37,6 +37,14 @@ namespace TodoistCloneAPI.Controllers
             return StatusCode(200, retornoSQL);
         }
 
+        [HttpDelete]
+        [Route("/usuarios/{idUsuario}")]
+        public IActionResult ExcluirUsuario(int idUsuario)
+        {
+            var retornoSQL = _UsuarioRepository.ExcluirUsuario(idUsuario);
+
+            return StatusCode(200, retornoSQL);
+        }
         [HttpGet]
         [Route("/usuarios/{idUsuario}")]
         public IActionResult ObterUsuarioPorId(int idUsuario)
