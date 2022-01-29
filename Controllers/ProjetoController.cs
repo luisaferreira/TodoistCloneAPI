@@ -47,7 +47,7 @@ namespace TodoistCloneAPI.Controllers
         }
 
         [HttpGet]
-        [Route("/projetos/{idProjeto}")]
+        [Route("/projeto/{idProjeto}")]
         public IActionResult ObterProjetoPorId(int idProjeto)
         {
             var projeto = _ProjetoRepository.ObterProjetoPorId(idProjeto);
