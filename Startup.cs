@@ -40,7 +40,9 @@ namespace TodoistCloneAPI
 
             services.AddScoped<IEtiquetaRepository, EtiquetaRepository>();
             services.AddScoped<IProjetoRepository, ProjetoRepository>();
-        
+
+            services.AddScoped<ITarefaEtiquetaRepository, TarefaEtiquetaRepository>();
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

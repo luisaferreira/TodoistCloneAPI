@@ -50,7 +50,38 @@ namespace TodoistCloneAPI.Repositories
 
         public Usuario ObterUsuarioPorId(int idUsuario)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var sql = new StringBuilder();
+                sql.AppendLine("SELECT Id, Nome, Email, Senha, Ativo FROM Usuario");
+                sql.AppendLine($"WHERE Id = '{idUsuario}'");
+
+                var retornoSQL = _DataBase.ExecutaSelect(sql.ToString());
+                if (retornoSQL.Tables.Count > 0 && retornoSQL.Tables[0].Rows.Count > 0)
+                {
+                    var linha = retornoSQL.Tables[0].Rows[0];
+
+                    var usuario = new Usuario()
+                    {
+                        Id=Convert.ToInt32(linha["Id"]),
+                        Nome = linha["Nome"].ToString(),
+                        Email = linha["Email"].ToString(),
+                        Senha = linha["Senha"].ToString(),
+                        Ativo = Convert.ToBoolean(linha["Ativo"])
+                    };
+
+                    return usuario;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception($"Erro ao obter usuário por id: {e.Message}");
+            }
         }
 
         public IEnumerable<Usuario> ObterUsuarios()

@@ -21,7 +21,7 @@ namespace TodoistCloneAPI.Controllers
         {
             var retornoSQL = _EtiquetaRepository.AdicionarEtiqueta(etiqueta);
 
-            return StatusCode(201);
+            return StatusCode(201, retornoSQL);
         }
 
         [HttpPut]
