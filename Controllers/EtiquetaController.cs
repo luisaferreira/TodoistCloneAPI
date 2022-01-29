@@ -43,7 +43,7 @@ namespace TodoistCloneAPI.Controllers
         }
 
         [HttpGet]
-        [Route("/etiquetas/{idEtiqueta}")]
+        [Route("/etiqueta/{idEtiqueta}")]
         public IActionResult ObterEtiquetaPorId(int idEtiqueta)
         {
             var etiqueta = _EtiquetaRepository.ObterEtiquetaPorId(idEtiqueta);

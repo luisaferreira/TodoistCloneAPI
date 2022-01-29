@@ -25,7 +25,7 @@ namespace TodoistCloneAPI.Controllers
         }
 
         [HttpDelete]
-        [Route("/tarefaEtiquetas/{idTarefasEtiquetas}")]
+        [Route("/tarefaEtiqueta/{idTarefasEtiquetas}")]
         public IActionResult ExcluirTarefaEtiqueta(int idTarefaEtiqueta)
         {
             var retornoSQL = _TarefaEtiquetaRepository.ExcluirTarefaEtiqueta(idTarefaEtiqueta);
@@ -34,7 +34,7 @@ namespace TodoistCloneAPI.Controllers
         }
 
         [HttpGet]
-        [Route("/tarefaEtiquetas/{idEtiqueta}")]
+        [Route("/tarefasEtiqueta/{idEtiqueta}")]
         public IActionResult ObterTarefaEtiquetaPorIdEtiqueta(int idEtiqueta)
         {
             var tarefaEtiqueta = _TarefaEtiquetaRepository.ObterTarefaEtiquetaPorIdEtiqueta(idEtiqueta);
